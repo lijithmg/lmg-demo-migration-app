@@ -1,0 +1,42 @@
+{
+  "eventing": {
+    "commerce": [
+      {
+        "events": [
+          {
+            "description": "Triggered after a customer is saved in Adobe Commerce.",
+            "fields": [
+              {
+                "name": "id"
+              },
+              {
+                "name": "email"
+              },
+              {
+                "name": "firstname"
+              },
+              {
+                "name": "lastname"
+              }
+            ],
+            "label": "Customer Save Commit After",
+            "name": "observer.customer_save_commit_after",
+            "runtimeActions": [
+              "customer-event-logger/customer-event-processor"
+            ]
+          }
+        ],
+        "provider": {
+          "description": "Receives Adobe Commerce customer save notifications.",
+          "label": "Commerce Events Provider"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Logs processed Adobe Commerce customer save events for verification, fully stateless.",
+    "displayName": "Customer Event Logger",
+    "id": "customer-event-logger",
+    "version": "1.0.0"
+  }
+}
